@@ -11,9 +11,14 @@ class TaskController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index($estado = null)
     {
         $tasks = Task::get();
+
+        if ($estado) {
+            $tasks = $tasks->where('status', $estado);
+        }
+
 
         return response()->json([
             'data' => $tasks

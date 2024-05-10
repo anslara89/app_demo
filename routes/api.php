@@ -32,5 +32,6 @@ Route::group([
     Route::get('me', 'AuthController@me');
 
     Route::get('tasks/all', [TaskController::class, 'index'])->middleware(['jwt.auth']);
+    Route::get('tasks/{estado?}', [TaskController::class, 'index'])->middleware(['jwt.auth']);
     Route::resource('tasks', 'TaskController');
 });
