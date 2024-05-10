@@ -14,7 +14,7 @@ class Task extends Model
      *
      * @var string
      */
-    protected $table = 'news';
+    protected $table = 'tasks';
 
     /**
      * The database primary key value.

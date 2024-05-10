@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\TaskController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,5 +31,6 @@ Route::group([
     Route::post('signup', 'AuthController@signup');
     Route::get('me', 'AuthController@me');
 
-    Route::resource('tasks', 'Task');
+    Route::get('tasks/all', [TaskController::class, 'index']);
+    Route::resource('tasks', 'TaskController');
 });
